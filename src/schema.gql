@@ -1,0 +1,111 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Article {
+  body: String!
+  excerpt: String!
+
+  """Unique Identifier"""
+  id: Int!
+  mainImage: String
+  slug: String!
+  title: String!
+  user: User!
+  user_id: Int!
+}
+
+input CreateArticleInput {
+  content: String!
+  title: String!
+  user_id: Int!
+}
+
+input CreateHelloInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateUserInput {
+  first_name: String
+  last_name: String
+  middle_name: String
+  password: String!
+  username: String!
+}
+
+type Hello {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
+input LoginUserInput {
+  password: String!
+  username: String!
+}
+
+type Mutation {
+  createArticle(createArticleInput: CreateArticleInput!): Article!
+  createHello(createHelloInput: CreateHelloInput!): Hello!
+  createUser(createUserInput: CreateUserInput!): User!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+  removeArticle(id: Int!): Article!
+  removeHello(id: Int!): Hello!
+  removeUser(id: Int!): User!
+  signup(createUserInput: CreateUserInput!): User!
+  updateArticle(updateArticleInput: UpdateArticleInput!): Article!
+  updateHello(updateHelloInput: UpdateHelloInput!): Hello!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  article(id: Int!): Article!
+  articles: [Article!]!
+  hello(id: Int!): Hello!
+  user(id: Int!): User!
+  userArticles(user_id: Int!): [Article!]!
+  userByOtherField(field: String!, name: String!): User!
+  users: [User!]!
+}
+
+input UpdateArticleInput {
+  content: String
+  id: Int!
+  title: String
+  user_id: Int
+}
+
+input UpdateHelloInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateUserInput {
+  first_name: String
+  id: Int!
+  last_name: String
+  middle_name: String
+  password: String
+  username: String
+}
+
+type User {
+  articles: [Article!]
+  bio: String
+  email: String
+  first_name: String
+  id: Int!
+  image: String
+  last_name: String
+  middle_name: String
+  password: String!
+  phone: String
+  slug: String!
+  username: String!
+}
